@@ -7,7 +7,7 @@ struct IpAddress : public std::error_code {
     std::string fourthSubnet;
 };
 
-IpAddress parseIp (std::string ip) {
+std::string parseIp (std::string ip) {
     IpAddress result;
     int dotCount = 0;
 
@@ -31,6 +31,7 @@ IpAddress parseIp (std::string ip) {
         }
 
     }
+    std::string fullIp = std::to_string(result);
     return result;
 
 }
